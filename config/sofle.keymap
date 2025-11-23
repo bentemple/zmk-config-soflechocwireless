@@ -79,7 +79,7 @@
         gaming_layer_raise {
             label = "g_raise";
             bindings = <
-&kp GRAVE  &trans      &trans     &trans      &trans       &trans                     &trans          &trans          &trans        &trans          &trans          &trans
+&kp GRAVE  &kp F20     &kp F21    &kp F22     &kp F23      &kp F24                    &trans          &trans          &trans        &trans          &trans          &trans
 &trans     &trans      &trans     &trans      &trans       &trans                     &trans          &kp MINUS       &kp EQUAL     &kp UNDERSCORE  &kp LEFT_BRACE  &kp RIGHT_BRACE
 &trans     &kp F21     &trans     &trans      &trans       &kp F20                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT       &kp DEL         &kp BSPC
 &trans     &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans   &trans    &trans  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END         &trans          &trans
