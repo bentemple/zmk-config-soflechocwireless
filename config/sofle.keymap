@@ -76,8 +76,8 @@
             label = "gaming";
         };
 
-        gaming_layer_raise {
-            label = "g_raise";
+        gaming_layer_lower {
+            label = "g_lower";
             bindings = <
 &kp GRAVE  &kp F20     &kp F21    &kp F22     &kp F23      &kp F24                    &trans          &trans          &trans        &trans          &trans          &trans
 &trans     &trans      &trans     &trans      &trans       &trans                     &trans          &kp MINUS       &kp EQUAL     &kp UNDERSCORE  &kp LEFT_BRACE  &kp RIGHT_BRACE
