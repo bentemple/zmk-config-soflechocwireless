@@ -70,7 +70,7 @@
 &kp TAB           &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_CONTROL  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &trans            &trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                          &trans  &trans  &trans  &trans  &kp SPACE    &kp ENTER  &mo 5   &trans  &trans  &trans
+                          &trans  &trans  &trans  &mo 5   &kp SPACE    &kp ENTER  &trans  &trans  &trans  &trans
             >;
 
             label = "gaming";
@@ -101,7 +101,7 @@
         };
 
         activated_adjust_gaming {
-            if-layers = <5 1>;
+            if-layers = <5 2>;
             then-layer = <3>;
         };
     };
