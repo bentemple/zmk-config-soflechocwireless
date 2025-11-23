@@ -66,14 +66,29 @@
 
         gaming_layer {
             bindings = <
-&kp ESC           &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &kp GRAVE
+&kp ESC           &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &kp TAB           &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_CONTROL  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
 &trans            &trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                          &trans  &trans  &trans  &trans  &kp SPACE    &kp ENTER  &trans  &trans  &trans  &trans
+                          &trans  &trans  &trans  &trans  &kp SPACE    &kp ENTER  &mo 5   &trans  &trans  &trans
             >;
 
             label = "gaming";
+        };
+
+        gaming_layer_raise {
+            label = "g_raise";
+            bindings = <
+&kp GRAVE  &trans      &trans     &trans      &trans       &trans                     &trans          &trans          &trans        &trans          &trans          &trans
+&trans     &trans      &trans     &trans      &trans       &trans                     &trans          &kp MINUS       &kp EQUAL     &kp UNDERSCORE  &kp LEFT_BRACE  &kp RIGHT_BRACE
+&trans     &kp F21     &trans     &trans      &trans       &kp F20                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT       &kp DEL         &kp BSPC
+&trans     &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans   &trans    &trans  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END         &trans          &trans
+                       &trans     &trans      &trans       &trans   &trans    &trans  &trans          &trans          &trans        &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 
@@ -82,6 +97,11 @@
 
         activateadjust {
             if-layers = <1 2>;
+            then-layer = <3>;
+        };
+
+        activated_adjust_gaming {
+            if-layers = <5 1>;
             then-layer = <3>;
         };
     };
