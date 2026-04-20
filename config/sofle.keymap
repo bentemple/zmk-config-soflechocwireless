@@ -11,6 +11,29 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    macros {
+        enter_and_gaming_layer: enter_and_back_to_gaming_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp ENTER &to 4>;
+            label = "ENTER_AND_BACK_TO_GAMING_LAYER";
+        };
+
+        t_and_gaming_chat_layer: t_and_gaming_chat_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp T &to 6>;
+            label = "T_AND_GAMING_CHAT_LAYER";
+        };
+
+        esc_and_gaming_layer: esc_and_gaming_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp ESC &to 4>;
+            label = "ESC_AND_GAMING_LAYER";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -79,16 +102,27 @@
         gaming_layer_lower {
             label = "g_lower";
             bindings = <
-&kp GRAVE  &kp F20     &kp F21    &kp F22     &kp F23      &kp F24                    &trans          &trans          &trans        &trans          &trans          &trans
-&trans     &trans      &trans     &trans      &trans       &trans                     &trans          &kp MINUS       &kp EQUAL     &kp UNDERSCORE  &kp LEFT_BRACE  &kp RIGHT_BRACE
-&trans     &kp F21     &trans     &trans      &trans       &kp F20                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT       &kp DEL         &kp BSPC
-&trans     &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans   &trans    &trans  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END         &trans          &trans
-                       &trans     &trans      &trans       &trans   &trans    &trans  &trans          &trans          &trans        &trans
+&kp GRAVE  &kp F20     &kp F21    &kp F22     &kp F23      &kp F24                                     &trans          &trans          &trans        &trans          &trans          &trans
+&trans     &trans      &trans     &trans      &trans       &t_and_gaming_chat_layer                    &trans          &kp MINUS       &kp EQUAL     &kp UNDERSCORE  &kp LEFT_BRACE  &kp RIGHT_BRACE
+&trans     &kp F21     &trans     &trans      &trans       &kp F20                                     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT       &kp DEL         &kp BSPC
+&trans     &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans                    &trans    &trans  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END         &trans          &trans
+                       &trans     &trans      &trans       &trans                    &trans    &trans  &trans          &trans          &trans        &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp PG_UP PG_DN>;
+        };
+
+        gaming_chat_layer {
+            label = "gaming_chat";
+            bindings = <
+&esc_and_gaming_layer  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB                &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans                 &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans                 &trans  &trans  &trans  &trans  &trans  &trans    &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+                               &trans  &trans  &trans  &mo 5   &trans    &enter_and_gaming_layer  &trans  &trans  &trans  &trans
+            >;
         };
     };
 
@@ -106,4 +140,3 @@
         };
     };
 };
-
